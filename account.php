@@ -133,7 +133,7 @@
                                         <h5 class="modal-title" id="modalTitleId">Your conversations with ' . $conversation . '</h5>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
-                                    <div class="modal-body text-start">';
+                                    <div class="modal-body text-start" id="allPMs">';
 
                         foreach ($dates as $date) {
 
@@ -158,7 +158,7 @@
                                         <form method="post">
                                             <input class="mb-3" type="text" name="message" id="message">
                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                            <button type="submit" name="sendMessage" class="btn btn-primary" value="' . $id . '">Send</button>
+                                            <button type="submit" name="sendMessage" id="sendPM" class="btn btn-primary" value="' . $id . '">Send</button>
                                         </form>
                                     </div>
                                 </div>
