@@ -1,0 +1,34 @@
+input{
+    text-align: center;
+}
+
+select{
+    text-align: center;
+}
+
+body {
+    padding-bottom: 7vh;
+}
+
+.bottom-right{
+    position: fixed;
+    bottom: 7em;
+    right: 0;
+    margin-right: 1vh;
+}
+
+.img-public{
+    float: center;
+    max-width: 100%;
+    max-height: 10em;
+    object-fit: scale-down;
+}
+
+.card-index{
+    width: 30vh;
+    height: 35vh;
+}
+
+.chatlog{
+    max-height: 40vh;
+}
