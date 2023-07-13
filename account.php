@@ -22,7 +22,7 @@
 
     <div class="container text-center mb-3 col-3">
 
-        <h1><?php echo $_SESSION['userName']; ?></h1>
+        <h1 id="user"><?php echo $_SESSION['userName']; ?></h1>
 
         <!-- ========== Start Profile Picture ========== -->
 
@@ -143,7 +143,6 @@
                                 if ($message->otheruser == $conversation && $date == $message->date) {
 
                                     echo "<div class='my-2'>";
-
                                     echo "<div class='fw-light'>" . $message->timestamp . " " . $message->sender . "</div>";
                                     echo "<div class='fw-normal text-break'>" . $message->message . "</div>";
                                     echo "</div>";
@@ -153,13 +152,26 @@
 
                         $id = $userFunctions->getIdFromName($conversation);
 
-                        echo '</div>
+                        echo '
+                                    </div>
                                     <div class="modal-footer">
-                                        <form method="post">
-                                            <input class="mb-3" type="text" name="message" id="message">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                            <button type="submit" name="sendMessage" id="sendPM" class="btn btn-primary" value="' . $id . '">Send</button>
-                                        </form>
+                                        <div class="dropdown">
+                                            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                Invite to group:
+                                            </button>
+                                            <ul class="dropdown-menu">';
+                        
+                                        $groups = $groupFunctions->allUserGroups();
+                                        foreach ($groups as $group) {
+                                            echo '<li><a class="dropdown-item group-invite" id="'.$group->id.'">'.$group->name.'</a></li>';                                                
+                                        }
+
+                                            echo '
+                                            </ul>
+                                        </div>
+                                        <input class="py-1 messageToSend" type="text" name="message" id="message">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button type="button" name="sendMessage" id="sendPM" class="btn btn-primary sendmsgbtn" value="' . $id . '">Send</button>
                                     </div>
                                 </div>
                             </div>
