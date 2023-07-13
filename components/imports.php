@@ -15,6 +15,8 @@
 
 <!-- Custom User Class -->
 <?php
-include_once("classes/user.php");
+include_once __DIR__.("/../classes/user.php");
+include_once __DIR__.("/../classes/group.php");
 $userFunctions = new User;
+$groupFunctions = new Group();
 ?>
