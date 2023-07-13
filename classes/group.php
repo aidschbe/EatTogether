@@ -97,4 +97,17 @@ class Group
 
         return $members;
     }
+
+    function sendInvite($group, $invitee){
+
+        $db = new DBPDO;
+
+        $conn = $db->connect();
+
+        $sql = $conn->prepare("INSERT INTO groupinvites (group, invitee, sender) VALUES (?, ?, ?)");
+        $sql->execute([$group, $invitee, $_SESSION["userId"]]);
+
+        return "Invite sent.";
+
+    }
 }
