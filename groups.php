@@ -12,7 +12,6 @@
     include_once("components/imports.php");
     include_once("components/session.php");
     include_once("classes/group.php");
-    $groupFunctions = new Group();
     ob_start();
     ?>
 
@@ -70,7 +69,7 @@
         }
         ?>
 
-        <div class="row">
+        <div class="row justify-content-center">
             <?php
 
             $userGroups = $groupFunctions->allUserGroups();
