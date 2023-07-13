@@ -193,7 +193,6 @@ class User
 
     function getCity()
     {
-
         $db = new DBPDO;
 
         $conn = $db->connect();
@@ -209,7 +208,6 @@ class User
 
     function sendPrivateMessage($message, $recipient)
     {
-
         $db = new DBPDO;
 
         $conn = $db->connect();
