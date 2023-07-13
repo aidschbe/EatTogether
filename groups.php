@@ -61,36 +61,37 @@
                 </form>
             </div>
         </div>
+    </div>
 
 
+    <?php
+    if (isset($_POST["createGroup"])) {
+        $groupFunctions->createGroup($_POST["groupName"]);
+    }
+    ?>
+
+    <div class="row text-center justify-content-center">
         <?php
-        if (isset($_POST["createGroup"])) {
-            $groupFunctions->createGroup($_POST["groupName"]);
-        }
-        ?>
 
-        <div class="row justify-content-center">
-            <?php
+        $userGroups = $groupFunctions->allUserGroups();
 
-            $userGroups = $groupFunctions->allUserGroups();
+        foreach ($userGroups as $group) {
 
-            foreach ($userGroups as $group) {
-
-                echo '
+            echo '
                 <div class="card col-auto m-3">
                 <h4 class="card-title">' . $group->name . '</h4>
                 <div class="card-body row">';
 
 
 
-                $members = $groupFunctions->getMembers($group->id);
+            $members = $groupFunctions->getMembers($group->id);
 
-                foreach ($members as $member) {
+            foreach ($members as $member) {
 
-                    echo "<div class='card-text'>" . $member->screenName . "</div>";
-                }
+                echo "<div class='card-text'>" . $member->screenName . "</div>";
+            }
 
-                echo '
+            echo '
                 <div class="mt-3">
                     <form method="post">
                     <button type="submit" name="leaveGroup" class="btn btn-primary">Leave Group</button>
@@ -98,15 +99,14 @@
                 </div>
                 ';
 
-                echo '
+            echo '
                 </div>
                 </div>
             ';
-            }
-            ?>
-        </div>
-
+        }
+        ?>
     </div>
+
 
     <?php include_once("components/footer.php"); ?>
 
