@@ -26,6 +26,7 @@ include_once("components/imports.php");
                 <?php
 
                 if (isset($_SESSION['userId'])) {
+                    echo "<i class='bx bx-envelope m-1'></i>";
                     echo "<a href='account.php' class='btn btn-outline-light m-1'>Account</a>";
                     echo "<a href='groups.php' class='btn btn-outline-light m-1'>My Groups</a>";
 
