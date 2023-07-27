@@ -3,7 +3,7 @@ include_once("components/session.php");
 include_once("components/imports.php");
 ?>
 
-<header class="static-top p-3 mb-3 text-bg-dark">
+<header class="static-top p-1 mb-4 text-bg-dark">
     <div class="container">
         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
             <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
@@ -18,7 +18,7 @@ include_once("components/imports.php");
                 <li><a href="#" class="nav-link px-2 text-white">About</a></li>
             </ul>
 
-            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+            <form class="col-12 col-lg-auto mb-lg-0 me-lg-3" role="search">
                 <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
             </form>
 
@@ -26,14 +26,19 @@ include_once("components/imports.php");
                 <?php
 
                 if (isset($_SESSION['userId'])) {
-                    echo "<i class='bx bx-envelope m-1'></i>";
-                    echo "<a href='account.php' class='btn btn-outline-light m-1'>Account</a>";
-                    echo "<a href='groups.php' class='btn btn-outline-light m-1'>My Groups</a>";
+
+                    include_once("privateMessages.php");
+
+                    echo "<a href='groups.php' title='My Groups' class='btn btn-dark m-1'><i class='bi bi-people h3'></i></a>";
+                    
+                    echo "<a href='account.php' title='Account Settings' class='btn btn-dark m-1'>
+                    <img class='img-header' src=".$_SESSION['profilePicture'].">
+                    </a>";
 
                     echo
                     "
                         <form method='POST' style='display: inline'>
-                            <button type='submit' name='logout' class='btn btn-warning m-1'>Logout</button>
+                            <button type='submit' name='logout' title='Logout' class='btn btn-secondary m-1'><i class='bi bi-box-arrow-right h3'></i></button>
                         </form>
                     ";
 
