@@ -10,6 +10,7 @@
     <?php
     include_once("components/imports.php");
     include_once("components/session.php");
+    ob_start();
     ?>
 
 </head>
