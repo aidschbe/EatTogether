@@ -11,6 +11,7 @@
   <?php
   include_once("components/imports.php");
   include_once("components/session.php");
+  ob_start();
   ?>
 
 </head>
@@ -30,7 +31,7 @@
       foreach ($users as $user) {
 
         echo '
-          <div class="col-md-auto">
+          <div class="col-3">
             <div class="card card-index overflow-auto py-3">
               <img class="card-img-top img-fluid img-public mb-2" src="' . $user->picture . '" alt="Title">
               <h4 class="card-title">' . $user->screenName . '</h4>
@@ -39,8 +40,8 @@
                 </div>
                 
               <!-- Modal trigger button -->
-              <button type="button" class="btn btn-primary btn-sm col-6 mx-auto mt-4" data-bs-toggle="modal" data-bs-target="#modal' . $user->screenName . '">
-                Message Me! :)
+              <button type="button" title="Send Messsage" class="btn btn-primary btn-sm col-3 mx-auto mt-4" data-bs-toggle="modal" data-bs-target="#modal' . $user->screenName . '">
+                <i class="bi bi-send"></i>
               </button>
             </div>
           </div>
