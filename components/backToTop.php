@@ -1,4 +1,4 @@
-<button class="btn btn-primary bottom-right" onclick="backToTop()">Back to Top</button>
+<button class="btn btn-primary bottom-right" onclick="backToTop()"><i class="bi bi-arrow-up-circle h2" ></i></button>
 
 <script>
     function backToTop() {
