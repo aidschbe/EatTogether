@@ -63,6 +63,7 @@ CREATE TABLE `groupInvites`(
     `sender` BIGINT NOT NULL,
     `timestamp` TIMESTAMP NOT NULL
 );
+
 ALTER TABLE
     `groupMembers` ADD CONSTRAINT `groupmembers_user_foreign` FOREIGN KEY(`user`) REFERENCES `users`(`id`);
 ALTER TABLE
@@ -89,3 +90,9 @@ ALTER TABLE
     `meetUps` ADD CONSTRAINT `meetups_usergroup_foreign` FOREIGN KEY(`usergroup`) REFERENCES `userGroups`(`id`);
 ALTER TABLE
     `groupMembers` ADD CONSTRAINT `groupmembers_usergroup_foreign` FOREIGN KEY(`usergroup`) REFERENCES `userGroups`(`id`);
+
+INSERT INTO `genders` (`id`, `name`) VALUES
+(1, 'male'),
+(2, 'female'),
+(3, 'non-binary'),
+(4, 'no comment');
