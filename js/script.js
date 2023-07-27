@@ -1,19 +1,16 @@
 $(document).ready(function () {
 
-    $("#user").click(function () {
-        $(this).hide();
-    });
+    // toggle password visibility
+    $(".pw-toggle").click(function () {
 
-    $(".card").click(function () {
-        $(this).hide();
-    });
+        $(this).toggleClass("bi-eye bi-eye-slash")
 
-    $(".form-control").mouseenter(function () {
-        $(this).addClass("bg-info");
-    });
+        $(".pw").toggleClass("pw-hide pw-show")
 
-    $(".form-control").mouseleave(function () {
-        $(this).removeClass("bg-info");
+        $(".pw-hide").prop("type", "password")
+
+        $(".pw-show").prop("type", "text")
+
     });
 
     // send private message
