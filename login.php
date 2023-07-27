@@ -10,6 +10,7 @@
     <?php
     include_once("components/imports.php");
     include_once("components/session.php");
+    ob_start();
     ?>
 
 </head>
@@ -18,33 +19,37 @@
 
     <?php include_once("components/header.php"); ?>
 
-    <div class="container text-center">
-        <form method="post">
-            <h1>Please sign in</h1>
-            <div>
-                <label for="floatingInput">Email address</label>
-                <input class="form-control" id="floatingInput" name="loginUser" placeholder="name@example.com">
-            </div>
-            <div>
-                <label for="floatingPassword">Password</label>
-                <input type="password" class="form-control" id="floatingPassword" name="loginPassword" placeholder="Password">
-            </div>
-            <button name="login" class="btn btn-primary my-3 py-2" type="submit">Log in</button>
-        </form>
+    <div class="container">
 
-        <?php
-        if (isset($_POST["login"])) {
-
-            $userFunctions = new User;
-
-            $user = $_POST["loginUser"];
-            $pw = $_POST["loginPassword"];
-
-            echo "<div>" . $userFunctions->login($user, $pw) . "</div>";
-        }
-        ?>
+        <div class="justify-content-center text-center row">
+            <form class="col-6" method="post">
+                <h1>Please sign in</h1>
+                <div class="my-3">
+                    <input class="form-control" id="floatingInput" name="loginUser" placeholder="username/e-mail">
+                </div>
+                <div class="input-group my-3">
+                    <input type="password" class="form-control rounded z-2 pw pw-hide" id="floatingPassword" name="loginPassword" placeholder="password">
+                    <span class="input-group-text position-absolute end-0 z-3">
+                        <i class="bi bi-eye pw-toggle"></i>
+                    </span>
+                </div>
+                <button name="login" class="btn btn-primary my-3 py-2" type="submit">Log in</button>
+            </form>
+        </div>
 
     </div>
+
+    <?php
+    if (isset($_POST["login"])) {
+
+        $userFunctions = new User;
+
+        $user = $_POST["loginUser"];
+        $pw = $_POST["loginPassword"];
+
+        echo "<div>" . $userFunctions->login($user, $pw) . "</div>";
+    }
+    ?>
 
     <?php include_once("components/footer.php"); ?>
 
