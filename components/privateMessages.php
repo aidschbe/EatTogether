@@ -15,7 +15,7 @@ foreach ($messages as $message) {
 
 echo '<div class="dropdown">';
 
-echo '<button class="btn btn-dark" type="button" data-bs-toggle="dropdown"><i class="bi bi-envelope h3"></i></button>';
+echo '<button class="btn btn-dark" type="button" title="Private Messages" data-bs-toggle="dropdown"><i class="bi bi-envelope h3"></i></button>';
 
 echo '<ul class="dropdown-menu">';
 
