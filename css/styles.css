@@ -20,13 +20,20 @@ body {
 .img-public{
     float: center;
     max-width: 100%;
-    max-height: 10em;
+    max-height: 20vh;
+    object-fit: scale-down;
+}
+
+.img-header{
+    float: center;
+    max-width: 100%;
+    max-height: 3vh;
     object-fit: scale-down;
 }
 
 .card-index{
-    width: 30vh;
-    height: 35vh;
+    width: 40vh;
+    height: 50vh;
 }
 
 .chatlog{
