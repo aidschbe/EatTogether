@@ -22,3 +22,4 @@ user accounts:
 
 other:
 - think of what to use search bar for
+- convert inclues to OOP where possible
