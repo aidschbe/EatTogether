@@ -16,11 +16,11 @@
 
 </head>
 
-<body>
+<body data-bs-theme="dark">
 
   <?php include_once("components/header.php"); ?>
 
-  <div class="container text-center">
+  <div class="container-fluid text-center m-5">
 
     <div class="row gy-3">
 
@@ -31,8 +31,8 @@
       foreach ($users as $user) {
 
         echo '
-          <div class="col-3">
-            <div class="card card-index overflow-auto py-3">
+          <div class="col-auto">
+            <div class="card card-index overflow-auto bg-info-subtle">
               <img class="card-img-top img-fluid img-public mb-2" src="' . $user->picture . '" alt="Title">
               <h4 class="card-title">' . $user->screenName . '</h4>
               <div class="card-body overflow-auto">

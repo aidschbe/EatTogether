@@ -3,7 +3,7 @@ include_once("components/session.php");
 include_once("components/imports.php");
 ?>
 
-<header class="static-top p-1 mb-4 text-bg-dark">
+<header class="static-top p-1 mb-4 bg-primary-subtle">
     <div class="container">
         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
             <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
