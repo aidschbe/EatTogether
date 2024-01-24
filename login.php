@@ -46,8 +46,11 @@
 
         $user = $_POST["loginUser"];
         $pw = $_POST["loginPassword"];
+        $login = $userFunctions->login($user, $pw);
 
-        echo "<div>" . $userFunctions->login($user, $pw) . "</div>";
+        echo <<<HTML
+        <div>$login</div>
+        HTML;
     }
     ?>
 

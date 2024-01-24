@@ -57,7 +57,9 @@
                     $genders = $userFunctions->genderOptions();
 
                     foreach ($genders as $gender) {
-                        echo "<option value='" . $gender->id . "'>$gender->name</option>";
+                        echo <<<HTML
+                        <option value='$gender->id'>$gender->name</option>
+                        HTML;
                     }
 
                     ?>

@@ -1,5 +1,5 @@
 <div>
-    <footer class="fixed-bottom text-bg-dark">
+    <footer class="fixed-bottom text-bg-dark bg-primary-subtle">
 
         <?php
         include_once("backToTop.php");

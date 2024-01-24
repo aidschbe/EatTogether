@@ -23,7 +23,9 @@
 
     <div class="container text-center mb-3 col-3">
 
-        <h1><?php echo $_SESSION['userName']; ?></h1>
+        <h1>
+            <?php echo $_SESSION['userName']; ?>
+        </h1>
 
         <div class="m-5">
 
@@ -31,7 +33,8 @@
 
             <div>
                 <!-- Modal trigger button -->
-                <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#createNewGroup">
+                <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal"
+                    data-bs-target="#createNewGroup">
                     Create New Group
                 </button>
             </div>
@@ -39,7 +42,8 @@
         </div>
 
         <!-- Modal Body -->
-        <div class="modal fade" id="createNewGroup" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+        <div class="modal fade" id="createNewGroup" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false"
+            role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
             <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm" role="document">
                 <form method="post">
                     <div class="modal-content">
@@ -77,10 +81,11 @@
 
         foreach ($userGroups as $group) {
 
-            echo '
+            echo <<<HTML
                 <div class="card col-auto m-3">
-                <h4 class="card-title">' . $group->name . '</h4>
-                <div class="card-body row">';
+                    <h4 class="card-title">$group->name'</h4>
+                <div class="card-body row">
+                HTML;
 
 
 
@@ -88,21 +93,20 @@
 
             foreach ($members as $member) {
 
-                echo "<div class='card-text'>" . $member->screenName . "</div>";
+                echo <<<HTML
+                <div class='card-text'>$member->screenName</div>
+                HTML;
             }
 
-            echo '
+            echo <<<HTML
                 <div class="mt-3">
                     <form method="post">
-                    <button type="submit" name="leaveGroup" class="btn btn-primary">Leave Group</button>
+                        <button type="submit" name="leaveGroup" class="btn btn-primary">Leave Group</button>
                     </form>
                 </div>
-                ';
-
-            echo '
                 </div>
                 </div>
-            ';
+                HTML;
         }
         ?>
     </div>
