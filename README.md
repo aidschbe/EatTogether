@@ -18,8 +18,7 @@ user accounts:
 - make public account page
 - add hyperlink to user-images on index page
 - change more button text into icons (don't forget title for hover text)
-- fix grid on index page (cards overlap in smaller browser window)
 
 other:
-- think of what to use search bar for
-- convert inclues to OOP where possible
+- implement search bar
+- convert includes to OOP where possible
